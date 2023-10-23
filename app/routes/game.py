@@ -29,13 +29,6 @@ def create_game():
 
         :return: A JSON response containing the match ID of the newly created game, along with the HTTP status code.
     """
-    data = request.get_json()
-    match_id = data.get('match_id') if data else None
-
-    if match_id is not None and not isinstance(match_id, int):
-        logging.warning("Invalid match ID provided")
-        return jsonify({'error': 'Invalid match ID, it must be an integer'}), http.HTTPStatus.BAD_REQUEST
-
     new_game = game_service.create_game()
     logging.info(f"New game created with match ID {new_game.match_id}")
     return jsonify({'match_id': new_game.match_id}), http.HTTPStatus.OK
