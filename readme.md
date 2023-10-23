@@ -59,7 +59,7 @@ The application will be accessible at `http://localhost:5001`.
 - **Description:** Starts a new game and returns the match ID.
 - **Response:**
   - **Success:** 
-    ```json
+    ```
     {
         "match_id": <match_id>
     }
@@ -78,7 +78,7 @@ The application will be accessible at `http://localhost:5001`.
 - **Method:** `POST`
 - **Description:** Make a move in the game.
 - **Request Body:**
-    ```json
+    ```
     {
         "match_id": <match_id>,
         "player_id": "X" | "O",
@@ -90,7 +90,7 @@ The application will be accessible at `http://localhost:5001`.
     ```
 - **Response:**
     - **Success:** 
-        ```json
+        ```
         {
             "match_id": <match_id>,
             "player_id": "X" | "O",
@@ -116,7 +116,7 @@ The application will be accessible at `http://localhost:5001`.
 - **Description:** Retrieves the current status of the game.
 - **Response:**
     - **Success:** 
-        ```json
+        ```
         {
             "match_id": <match_id>,
             "current_player": "X" | "O",
